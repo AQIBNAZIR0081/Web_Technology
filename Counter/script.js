@@ -35,11 +35,15 @@ increment.addEventListener("click", () => {
 // ON ONE CLICK DECREAMENT START FROM 100 AND STOP AT 0 BY USING 'SetInterval Method'
 
 decrement.addEventListener("click", () => {
-    let dec = setInterval(function () {
-        count--;
-        counting.innerHTML = count;
-        if (counting.innerHTML == 0) {
-            clearInterval(dec);
-        }
-    }, 10);
+    if (counting.innerHTML == 0) {
+        return;
+    } else {
+        let dec = setInterval(function () {
+            count--;
+            counting.innerHTML = count;
+            if (counting.innerHTML == 0) {
+                clearInterval(dec);
+            }
+        }, 10);
+    }
 });
